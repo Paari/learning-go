@@ -104,6 +104,11 @@ func main() {
 	f1 := fruitsType{name: "Apple", color: "Red", count: 4}
 	fmt.Println("Value of F1 using struct:", f1)
 	fmt.Println("Value of F1's name field:", f1.name)
+
+	// Working with pointer value
+	v := 99
+	increaseValue(&v) // & is necessary to tell the function that use the value of v at this position
+	fmt.Println("Increased pointer value:", v)
 }
 
 // Creating a new function
@@ -125,4 +130,10 @@ type fruitsType struct {
 	name  string
 	color string
 	count int
+}
+
+// function returning pointer value
+func increaseValue(v *int) { // * tells that use the pointer value insted of a new reference
+	fmt.Println(v) // the value of v is the memory reference of the variable
+	*v++           // * will make sure the value returned is pointer value not the memory address
 }
