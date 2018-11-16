@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+	"math"
+)
 
 func main() {
 	// Variables
@@ -81,4 +85,31 @@ func main() {
 		fmt.Println("key:", key, "value", value)
 	}
 
+	fmt.Println(" \n------ CALLING A FUNCTION ------\n ")
+	result := sumOfNumbers(5, 10)
+	fmt.Println("Sum of numbers:", result)
+
+	// Now when we call the squareRoot function we will get 2 values
+	// We can use if else statement to print the result
+	squareResult, error := squareRoot(20) // check the other condition by changing 20 to a negative number
+
+	if error != nil {
+		fmt.Println(error)
+	} else {
+		fmt.Println("squareRoot function result:", squareResult)
+	}
+}
+
+// Creating a new function
+func sumOfNumbers(x int, y int) int {
+	return x + y
+}
+
+// Little complex function
+func squareRoot(x float64) (float64, error) {
+	if x < 0 {
+		return 0, errors.New("Not for negative values")
+	}
+
+	return math.Sqrt(x), nil
 }
