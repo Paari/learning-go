@@ -6,6 +6,13 @@ import (
 	"math"
 )
 
+// A Struct is a collection of fields - used below in the main function
+type fruitsType struct {
+	name  string
+	color string
+	count int
+}
+
 func main() {
 	// Variables
 	// basic
@@ -98,6 +105,11 @@ func main() {
 	} else {
 		fmt.Println("squareRoot function result:", squareResult)
 	}
+
+	// Using struct
+	f1 := fruitsType{name: "Apple", color: "Red", count: 4}
+	fmt.Println("Value of F1 using struct:", f1)
+	fmt.Println("Value of F1's name field:", f1.name)
 }
 
 // Creating a new function
