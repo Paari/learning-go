@@ -63,4 +63,22 @@ func main() {
 		fmt.Println(i)
 		i++
 	}
+
+	fmt.Println(" \n------ ITERATE OVER EACH ELEMENT OF AN ARRAY & MAP ------\n ")
+	// for loop can also be used to loop over elements of an Array
+	loopingArray := []string{"p", "q", "r"}
+
+	for index, value := range loopingArray {
+		fmt.Println("index:", index, "value:", value)
+	}
+
+	// similar for maps
+	loopingMap := make(map[string]string)
+	loopingMap["app"] = "apple"
+	loopingMap["goo"] = "google"
+
+	for key, value := range loopingMap {
+		fmt.Println("key:", key, "value", value)
+	}
+
 }
